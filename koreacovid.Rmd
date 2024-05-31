@@ -20,7 +20,7 @@ mutate(across(where(is.character), as.factor))
 ```
 
 # Introduction
-
+ We will be determining if there is a difference between the sex death during covid
 
 
 ### Data is from the Patient_Info dataset from South   Korea 1 Jan to 1 May 2020  
@@ -31,6 +31,10 @@ Some of the data was uncoded for sex - sex must be just male or female
 state of a patient must be died or alive - we adjust that as well     
   
 # Your Question - Is dying independent of sex?  
+
+$H_0$ : dying is dependent of sex during covid There is a difference depending on sex 
+
+$H_A$ : there is no difference between the sex during covid in korea 
 
 
 # Methods  
@@ -74,7 +78,21 @@ colPerc(table1)
 ## Inferential results   
 
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+The p-value for the Chi-squared test is 0.001 so we reject the null hypothesis. 
+That gender and death by covid are dependent  
 
 
+ The fisher exact test shows that men are 2.3 times more likley to die than women in korea  
+ 
+ 
 ## Conclusions
 
+In conclusion The question was is dying independent of sex?   
+We found that there was a significant difference in the graph of covid deaths of female and male because  
+male are 2.3 more likely to have more deaths than females in korea. It shows that they are not related.  
