@@ -41,24 +41,34 @@ cat~cat
 
 # Results  
 
+
+
+
+
+
+
+## Graphical results - use ggplot commands to do this    
 ```{r}
-barchartGC(~class + Sex,data=ucdavis1)
-barchartGC(~class + Sex,data=ucdavis1, type="percent")
+barchartGC(~result + Sex,data=kRdata)
+barchartGC(~result + Sex,data=kRdata, type="percent")
 
 ```
 
-## Graphical results - use ggplot commands to do this    
 
+This barchart shows that there are more deaths of male  
+than female  
 
-
-  
-
-
-
-
-
-  
 ## Numerical results  
+
+```{r}
+table1 <- xtabs(~result + Sex, data=kRdata)
+rowPerc(table1)
+colPerc(table1)
+```
+ This shows that Males had 3 percent and females had 1.4 percent that died   
+ more than twice percent of male died then female.
+
+
 
 
 ## Inferential results   
