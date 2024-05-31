@@ -41,6 +41,12 @@ cat~cat
 
 # Results  
 
+```{r}
+barchartGC(~class + Sex,data=ucdavis1)
+barchartGC(~class + Sex,data=ucdavis1, type="percent")
+
+```
+
 ## Graphical results - use ggplot commands to do this    
 
 
